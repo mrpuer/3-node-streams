@@ -1,0 +1,12 @@
+{
+  "name": "3-node-streams",
+  "version": "1.0.0",
+  "description": "## Часть 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start1": "node task1/index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
