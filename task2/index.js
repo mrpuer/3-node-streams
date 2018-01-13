@@ -3,8 +3,8 @@ const fs = require('fs');
 const crypto = require('crypto');
 const hash = crypto.createHash('MD5');
 
-const input = fs.createReadStream('input.txt');
-const output = fs.createWriteStream('output.txt');
+const input = fs.createReadStream('./task2/input.txt');
+const output = fs.createWriteStream('./task2/output.txt');
 
 class CTransform extends Transform {
     constructor (options) {
@@ -17,12 +17,12 @@ class CTransform extends Transform {
         next();
     }
 
-    _flush(done) {
+    _flush(next) {
         this.store += hash.digest('hex');
         console.log(this.store);
         output.write(this.store);
         output.end;
-        done();
+        next();
     }
 }
 
